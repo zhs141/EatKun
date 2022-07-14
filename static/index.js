@@ -343,8 +343,8 @@ function shareText(score) {
         return '倒计时多了' + ((deviation_time / 1000) - 20).toFixed(2) + "s";
     }
     SubmitResults();
-    if (score <= 30) return '好鸡啊';
-    if (score <= 60) return '音游哥';
+    if (score <= 30) return '不错啦';
+    if (score <= 60) return '音游人选';
     if (score <= 100) return '666';
     if (score <= 150) return '好棒好棒';
     if (score <= 180) return '世界纪录就是你了吧';
