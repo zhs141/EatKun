@@ -307,10 +307,10 @@ function showGameScoreLayer() {
     l.className = l.className.replace(/bgc\d/, 'bgc' + c);
     document.getElementById('GameScoreLayer-text').innerHTML = shareText(_gameScore);
     let score_text = '得分&nbsp;&nbsp;';
-    score_text += deviation_time < 23000 ? _gameScore : "<span style='color:red;'>" + _gameScore + "</span>";
+    score_text += deviation_time < 33000 ? _gameScore : "<span style='color:red;'>" + _gameScore + "</span>";
     document.getElementById('GameScoreLayer-score').innerHTML = score_text;
     let bast = cookie('bast-score');
-    if (deviation_time < 23000) {
+    if (deviation_time < 33000) {
         if (!bast || _gameScore > bast) {
             bast = _gameScore;
             cookie('bast-score', bast, 100);
@@ -343,11 +343,11 @@ function shareText(score) {
         return '倒计时多了' + ((deviation_time / 1000) - 30).toFixed(2) + "s";
     }
     SubmitResults();
-    if (score <= 30) return '不错啦';
-    if (score <= 60) return '音游人选';
-    if (score <= 100) return '666';
-    if (score <= 150) return '好棒好棒';
-    if (score <= 180) return '世界纪录就是你了吧';
+    if (score <= 30) return '还得练练～';
+    if (score <= 60) return '>音游人选<';
+    if (score <= 100) return '不错哦！';
+    if (score <= 150) return '好棒好棒～';
+    if (score <= 180) return '世界纪录就是你了吧？';
     if (score <= 190) return '禁止职业选手参赛';
     return '好家伙你开挂了？';
 }
