@@ -339,8 +339,8 @@ function backBtn() {
 function shareText(score) {
     let date2 = new Date();
     deviation_time = (date2.getTime() - _date1.getTime())
-    if (deviation_time > 23000) {
-        return '倒计时多了' + ((deviation_time / 1000) - 20).toFixed(2) + "s";
+    if (deviation_time > 33000) {
+        return '倒计时多了' + ((deviation_time / 1000) - 30).toFixed(2) + "s";
     }
     SubmitResults();
     if (score <= 30) return '不错啦';
