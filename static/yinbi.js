@@ -307,7 +307,7 @@ function showGameScoreLayer() {
     l.className = l.className.replace(/bgc\d/, 'bgc' + c);
     document.getElementById('GameScoreLayer-text').innerHTML = shareText(_gameScore);
     let score_text = '得分&nbsp;&nbsp;';
-    score_text += deviation_time < 23000 ? _gameScore : "<span style='color:red;'>" + _gameScore + "</span>";
+    score_text += deviation_time < 100000 ? _gameScore : "<span style='color:red;'>" + _gameScore + "</span>";
     document.getElementById('GameScoreLayer-score').innerHTML = score_text;
     let bast = cookie('bast-score');
     if (deviation_time < 100000) {
