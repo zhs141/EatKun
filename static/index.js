@@ -316,6 +316,7 @@ function showGameScoreLayer() {
             cookie('bast-score', bast, 100);
         }
     }
+    let bast = bast + 180
     document.getElementById('GameScoreLayer-bast').innerHTML = '最佳&nbsp;&nbsp;' + bast;
     l.style.display = 'block';
 }
