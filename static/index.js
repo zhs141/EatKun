@@ -343,11 +343,13 @@ function shareText(score) {
         return '倒计时多了' + ((deviation_time / 1000) - 20).toFixed(2) + "s";
     }
     SubmitResults();
-    if (score <= 30) return '鸡你太美';
-    if (score <= 60) return '鸡你太太美';
-    if (score <= 100) return '鸡鸡鸡鸡鸡';
-    if (score <= 150) return '唱 跳 rap 篮球';
-    return '你就是蔡徐坤本人？';
+    if (score <= 30) return '好鸡啊';
+    if (score <= 60) return '鸡你太美';
+    if (score <= 100) return '666';
+    if (score <= 150) return '好棒好棒';
+    if (score <= 180) return '世界纪录就是你了吧';
+    if (score <= 2000) return '这小伙不错';
+    return '好家伙你就是ikun本人？';
 }
 
 function toStr(obj) {
