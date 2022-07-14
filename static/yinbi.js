@@ -124,7 +124,7 @@ function gameRestart() {
     _gameScore = 0;
     _gameOver = false;
     _gameStart = false;
-    _gameTimeNum = 20;
+    _gameTimeNum = 100;
     GameTimeLayer.innerHTML = creatTimeText(_gameTimeNum);
     countBlockSize();
     refreshGameLayer(GameLayer[0]);
@@ -310,13 +310,12 @@ function showGameScoreLayer() {
     score_text += deviation_time < 23000 ? _gameScore : "<span style='color:red;'>" + _gameScore + "</span>";
     document.getElementById('GameScoreLayer-score').innerHTML = score_text;
     let bast = cookie('bast-score');
-    if (deviation_time < 23000) {
+    if (deviation_time < 100000) {
         if (!bast || _gameScore > bast) {
             bast = _gameScore;
             cookie('bast-score', bast, 100);
         }
     }
-    let bast = bast + 80
     document.getElementById('GameScoreLayer-bast').innerHTML = '最佳&nbsp;&nbsp;' + bast;
     l.style.display = 'block';
 }
@@ -340,8 +339,8 @@ function backBtn() {
 function shareText(score) {
     let date2 = new Date();
     deviation_time = (date2.getTime() - _date1.getTime())
-    if (deviation_time > 23000) {
-        return '倒计时多了' + ((deviation_time / 1000) - 20).toFixed(2) + "s";
+    if (deviation_time > 100000) {
+        return '倒计时多了' + ((deviation_time / 1000) - 100).toFixed(2) + "s";
     }
     SubmitResults();
     if (score <= 30) return '不错啦';
@@ -349,7 +348,7 @@ function shareText(score) {
     if (score <= 100) return '666';
     if (score <= 150) return '好棒好棒';
     if (score <= 180) return '世界纪录就是你了吧';
-    if (score <= 2000) return '禁止职业选手参赛';
+    if (score <= 190) return '禁止职业选手参赛';
     return '好家伙你开挂了？';
 }
 
